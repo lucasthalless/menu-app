@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { AbstractEntity } from 'src/database/abstract.entity';
+import { Column, Entity } from 'typeorm';
 
 @Entity()
-export class Product {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
+export class Product extends AbstractEntity<Product> {
   @Column()
   category: string | null;
 
@@ -19,8 +17,4 @@ export class Product {
 
   @Column()
   photo: string;
-
-  constructor(product: Partial<Product>) {
-    Object.assign(this, product);
-  }
 }
