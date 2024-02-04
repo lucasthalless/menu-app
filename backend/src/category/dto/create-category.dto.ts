@@ -1,4 +1,4 @@
 export class CreateCategoryDto {
-  parent?: string | null;
+  parent?: string;
   name: string;
 }
