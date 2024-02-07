@@ -6,12 +6,6 @@ export function Header() {
     window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDarkMode, setDarkMode] = useState(getCurrentTheme);
 
-  console.log(isDarkMode);
-
-  getCurrentTheme()
-    ? document.documentElement.classList.toggle("dark")
-    : document.documentElement.classList.toggle("light");
-
   const toggleDarkMode = () => {
     setDarkMode(!isDarkMode);
   };
