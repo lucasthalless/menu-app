@@ -18,13 +18,13 @@ export class CategoryService {
   }
   async findAll() {
     return this.categoryRepository.find({
-      relations: { product: true },
+      relations: { products: true },
     });
   }
   async findOne(id: string) {
     return this.categoryRepository.find({
       where: { id },
-      relations: { product: true },
+      relations: { products: true },
     });
   }
 }

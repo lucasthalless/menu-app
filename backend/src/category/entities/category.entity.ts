@@ -25,5 +25,5 @@ export class Category extends AbstractEntity<Category> {
   @JoinTable({
     name: 'product_categories',
   })
-  product?: Product[] | null;
+  products?: Product[] | null;
 }
