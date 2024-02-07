@@ -1,11 +1,13 @@
-import { Category } from 'src/category/entities/category.entity';
-import { AbstractEntity } from 'src/database/abstract.entity';
+import { Category } from '@src/category/entities/category.entity';
+import { AbstractEntity } from '@src/database/abstract.entity';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
 @Entity()
 export class Product extends AbstractEntity<Product> {
-  @ManyToMany(() => Category, { cascade: true })
-  @JoinTable()
+  @ManyToMany(() => Category)
+  @JoinTable({
+    name: 'product_categories',
+  })
   categories: Category[] | null;
 
   @Column()

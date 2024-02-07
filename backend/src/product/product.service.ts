@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import { CreateProductDto } from '@src/product/dto/create-product.dto';
+import { UpdateProductDto } from '@src/product/dto/update-product.dto';
 import { EntityManager, Repository } from 'typeorm';
-import { Product } from './entities/product.entity';
+import { Product } from '@src/product/entities/product.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Category } from 'src/category/entities/category.entity';
+import { Category } from '@src/category/entities/category.entity';
 
 @Injectable()
 export class ProductService {
@@ -26,7 +26,9 @@ export class ProductService {
   }
 
   async findAll() {
-    return this.productsRepository.find();
+    return this.productsRepository.find({
+      relations: { categories: true },
+    });
   }
 
   async findOne(id: string) {

@@ -1,5 +1,13 @@
-import { AbstractEntity } from 'src/database/abstract.entity';
-import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { AbstractEntity } from '@src/database/abstract.entity';
+import { Product } from '@src/product/entities/product.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  JoinTable,
+  ManyToMany,
+  OneToOne,
+} from 'typeorm';
 
 @Entity()
 export class Category extends AbstractEntity<Category> {
@@ -12,4 +20,10 @@ export class Category extends AbstractEntity<Category> {
 
   @Column()
   name: string;
+
+  @ManyToMany(() => Product, (product) => product.categories)
+  @JoinTable({
+    name: 'product_categories',
+  })
+  product?: Product[] | null;
 }
