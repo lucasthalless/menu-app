@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCategoryDto } from './dto/create-category.dto';
-import { Category } from './entities/category.entity';
+import { CreateCategoryDto } from '@src/category/dto/create-category.dto';
+import { Category } from '@src/category/entities/category.entity';
 import { EntityManager, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -17,9 +17,14 @@ export class CategoryService {
     await this.entityManager.save(category);
   }
   async findAll() {
-    return this.categoryRepository.find();
+    return this.categoryRepository.find({
+      relations: { products: true },
+    });
   }
   async findOne(id: string) {
-    return this.categoryRepository.findOneBy({ id });
+    return this.categoryRepository.find({
+      where: { id },
+      relations: { products: true },
+    });
   }
 }
