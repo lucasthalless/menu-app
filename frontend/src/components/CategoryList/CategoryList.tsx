@@ -30,17 +30,6 @@ export function CategoryList() {
     });
   });
 
-  console.log(data);
-
-  // const categoriesRelated: Category[] = data.map((category: Category) => {
-  //   return {
-  //     ...category,
-  //     child: data.map((childCategory: Category) => {
-  //       if (childCategory.parent?.includes(category.id)) return childCategory;
-  //     }),
-  //   };
-  // });
-
   return (
     <section className="category-section">
       {isLoading ? (
