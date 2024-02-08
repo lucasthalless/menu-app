@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.product-card {
+  width: 18rem;
+  transition-property: transform;
+  position: relative;
+
+  & a {
+    display: block;
+    padding: 14px;
+    position: relative;
+    transition: all .3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px $zinc-900;
+
+    &:hover {
+      box-shadow: 0 2px 8px $zinc-950;
+      transform: scale(1.02);
+    }
+  }
+
+  .dark & a {
+    color: $light-text-color;
+  }
+
+  .light & a {
+    color: $dark-text-color;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .product-card a {
+    color: $light-text-color;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .product-card a {
+    color: $dark-text-color;
+  }
+}
+
+.product-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.product-card-image {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
