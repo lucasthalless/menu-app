@@ -1,8 +1,13 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from './database/database.module';
+import { DatabaseModule } from '@src/database/database.module';
 import { ConfigModule } from '@nestjs/config';
-import { ProductModule } from './product/product.module';
-import { CategoryModule } from './category/category.module';
+import { ProductModule } from '@src/product/product.module';
+import { CategoryModule } from '@src/category/category.module';
+import { AuthModule } from '@src/auth/auth.module';
+import { UsersModule } from '@src/users/users.module';
+import { AuthGuard } from '@src/auth/auth.guard';
+
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -10,8 +15,15 @@ import { CategoryModule } from './category/category.module';
     DatabaseModule,
     ProductModule,
     CategoryModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard,
+    },
+  ],
 })
 export class AppModule {}
