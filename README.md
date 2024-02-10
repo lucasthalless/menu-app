@@ -27,6 +27,16 @@ npm run seed
 
 e a API vai estar disponível junto com o banco de dados populado na porta [:3000](http://localhost:3000/).
 
+As rotas para teste são:
+
+```
+/auth/login (POST)
+/category (GET, POST)
+/category/:id (GET, PATCH, DELETE)
+/product (GET, POST)
+/product/:id (GET, PATCH, DELETE)
+```
+
 ### Frontend
 
 no diretório */frontend* execute:
