@@ -12,7 +12,7 @@ Clone esse repositório e no diretório */backend* execute:
 docker-compose up
 ```
 
-Após o docker iniciar o banco de dados MySQL, execute os comandos:
+Após o docker iniciar o banco de dados MySQL, em outro terminal execute os comandos:
 
 ```shell
 npm install
