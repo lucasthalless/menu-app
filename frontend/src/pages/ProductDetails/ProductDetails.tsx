@@ -27,8 +27,11 @@ export function ProductDetails() {
           <div>
             <h1>{data.name}</h1>
             <div className="product-image">
-              {data.imageUrl ? (
-                <img src={data.imageUrl} alt="" />
+              {data.photo ? (
+                <img
+                  src={`http://localhost:5173/src/pages/ProductDetails/${data.photo}`}
+                  alt=""
+                />
               ) : (
                 <Hamburger />
               )}
