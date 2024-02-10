@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.product-details {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  & h1 {
+    margin-top: 0;
+  }
+
+  & p {
+    align-self: end;
+  }
+
+  &>* {
+    width: 35rem;
+  }
+
+  & .product-image {
+    min-height: 300px;
+    display: flex;
+
+    & svg {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+    }
+  }
+}
