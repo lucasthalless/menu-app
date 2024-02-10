@@ -12,7 +12,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route element={<PrivateRoutes />}>
-            <Route path="/products" index element={<Products />} />
+            <Route path="/" index element={<Products />} />
             <Route path="/product-details/:id" element={<ProductDetails />} />
             <Route path="*" element={<Error />} />
           </Route>
