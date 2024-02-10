@@ -12,7 +12,7 @@ Clone esse repositório e no diretório */backend* execute:
 docker-compose up
 ```
 
-Após o docker iniciar o banco de dados MySQL, execute:
+Após o docker iniciar o banco de dados MySQL, execute os comandos:
 
 ```shell
 npm install
@@ -141,4 +141,4 @@ esse formato foi uma escolha pessoal e podia ser feito de outras maneiras també
 
 </details>
 
-Ainda pretendo implementar o context do React na lógica de autenticação do front e escrever alguns testes unitários com Jest e Testing Library.
+Ainda pretendo implementar o context do React na lógica de autenticação do frontend e escrever alguns testes unitários com Jest e Testing Library.
