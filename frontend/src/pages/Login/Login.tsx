@@ -21,7 +21,9 @@ export function Login() {
 
     try {
       axios.post("http://localhost:3000/auth/login", data).then((response) => {
-        document.cookie = `auth_token=${response.data.access_token}`;
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.cookie = `auth_token=${response.data.access_token};expires=${tomorrow}; path=/;`;
         setTimeout(() => navigate("/products"), 1000);
       });
     } catch (error) {
