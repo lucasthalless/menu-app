@@ -4,6 +4,7 @@ import axios from "axios";
 import { ProductList } from "../ProductList/ProductList";
 import "./style.scss";
 import { Product } from "../ProductCard/ProductCard";
+import { getCookieValue } from "../../utils/cookies";
 
 export interface Category {
   id: string;
@@ -15,22 +16,29 @@ export interface Category {
 
 export function CategoryList() {
   const { data, isLoading } = useQuery("categories", () => {
-    return axios.get("http://localhost:3000/category/").then((response) => {
-      const categoriesRelated: Category[] = response.data
-        .filter(
-          (category: Category) =>
-            category.parent === "" || category.parent === null
-        )
-        .map((category: Category) => {
-          return {
-            ...category,
-            child: response.data.filter(
-              (childCategory: Category) => childCategory.parent === category.id
-            ),
-          };
-        });
-      return categoriesRelated;
-    });
+    return axios
+      .get("http://localhost:3000/category/", {
+        headers: {
+          Authorization: `Bearer ${getCookieValue("auth_token")}`,
+        },
+      })
+      .then((response) => {
+        const categoriesRelated: Category[] = response.data
+          .filter(
+            (category: Category) =>
+              category.parent === "" || category.parent === null
+          )
+          .map((category: Category) => {
+            return {
+              ...category,
+              child: response.data.filter(
+                (childCategory: Category) =>
+                  childCategory.parent === category.id
+              ),
+            };
+          });
+        return categoriesRelated;
+      });
   });
 
   return (
