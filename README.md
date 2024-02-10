@@ -19,7 +19,13 @@ npm install
 npm run start:dev
 ```
 
-Que vão disponibilizar a API na porta [:3000](http://localhost:3000/).
+por ultimo:
+
+```shell
+npm run seed
+```
+
+e a API vai estar disponível junto com o banco de dados populado na porta [:3000](http://localhost:3000/).
 
 ### Frontend
 
@@ -68,6 +74,8 @@ A biblioteca [Phosphor React](https://www.npmjs.com/package/phosphor-react) foi 
 Para integração do Frontend com o Backend foram utilizadas as bibliotecas [Axios](https://axios-http.com/) e [React Query](https://www.npmjs.com/package/react-query), que permitem escrever um código menor, mais fácil de entender e te dão um melhor controle sobre as requisições com opções como refetch, captura de erros, informação se a requisição ainda está carregando, entre outras.
 
 A autenticação implementada no frontend funciona se comunicando com a api e, em caso de sucesso no login, guardando o token para utilziar no header das requisições em um cookie. O app verifica se o token existe em todas as outras páginas além da página de autenticação, caso o token não exista, o usuário e redirecionado para realizar o login.
+
+Além disso, foi implementada a funcionalidade de trocar para tema escuro e claro junto com a detecção do tema utilizado pelo usuário, acredito não ser uma feature muito util para um sistema de cardápios mas foi uma adição que decidi implementar mesmo assim.
 
 Deixei abaixo a lógica do componente [CategoryList](https://github.com/lucasthalless/menu-app/blob/main/frontend/src/components/CategoryList/CategoryList.tsx) explicada.
 <details> 

@@ -20,13 +20,17 @@
   }
 
   & .product-image {
-    min-height: 300px;
+    height: 300px;
     display: flex;
 
     & svg {
       width: 150px;
       height: 150px;
       margin: auto;
+    }
+
+    & img {
+      margin-inline: auto;
     }
   }
 }

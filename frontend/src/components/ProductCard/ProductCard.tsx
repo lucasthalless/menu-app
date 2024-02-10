@@ -4,7 +4,7 @@ import "./style.scss";
 export interface Product {
   id: string;
   name: string;
-  imageUrl: string;
+  photo: string;
   price: number;
 }
 
@@ -15,8 +15,10 @@ export function ProductCard(product: Product) {
         <div
           className="product-card-image"
           style={
-            product.imageUrl != ""
-              ? { backgroundImage: `url(${product.imageUrl})` }
+            product.photo != ""
+              ? {
+                  backgroundImage: `url(http://localhost:5173/src/pages/ProductDetails/${product.photo})`,
+                }
               : { backgroundColor: "gray" }
           }
         ></div>

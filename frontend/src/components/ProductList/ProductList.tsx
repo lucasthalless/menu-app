@@ -9,14 +9,14 @@ export function ProductList({ products }: ProductListProps) {
   return (
     <div className="products-container">
       {products.map((product: Product) => {
-        const { id, price, name, imageUrl } = product;
+        const { id, price, name, photo } = product;
         return (
           <ProductCard
             key={id}
             id={id}
             price={price}
             name={name}
-            imageUrl={imageUrl}
+            photo={photo}
           />
         );
       })}

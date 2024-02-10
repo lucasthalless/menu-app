@@ -56,7 +56,7 @@ export function CategoryList() {
                     <div key={index}>
                       <h3>{childCategory.name}</h3>
                       {childCategory.products.length ? (
-                        <ProductList products={category.products} />
+                        <ProductList products={childCategory.products} />
                       ) : (
                         <p>Categoria sem produtos no momento.</p>
                       )}
