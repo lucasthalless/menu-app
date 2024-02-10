@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 44px;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: $zinc-900;
+  gap: 16px;
+  border-radius: 4px;
+
+  @media (max-width: 450px) {
+    padding: 44px 14px;
+  }
+
+  & span {
+    height: 0px;
+    line-height: 0;
+  }
+
+}
