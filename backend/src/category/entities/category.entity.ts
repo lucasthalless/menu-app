@@ -1,5 +1,5 @@
-import { AbstractEntity } from '@src/database/abstract.entity';
-import { Product } from '@src/product/entities/product.entity';
+import { AbstractEntity } from '../../database/abstract.entity';
+import { Product } from '../../product/entities/product.entity';
 import {
   Column,
   Entity,

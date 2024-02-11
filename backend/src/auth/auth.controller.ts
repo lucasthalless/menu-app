@@ -1,6 +1,6 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
-import { AuthService } from '@src/auth/auth.service';
-import { SingInDto } from '@src/auth/dto/sing-in.dto';
+import { AuthService } from './auth.service';
+import { SingInDto } from './dto/sing-in.dto';
 
 import { SetMetadata } from '@nestjs/common';
 

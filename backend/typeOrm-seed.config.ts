@@ -1,7 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
 import { Category } from './src/category/entities/category.entity';
-import { MainSeeder } from './src/database/seeds/main.seeder';
 import { Product } from './src/product/entities/product.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { SeederOptions } from 'typeorm-extension';
@@ -19,7 +18,6 @@ const options: DataSourceOptions & SeederOptions = {
   password: configService.getOrThrow('MYSQL_PASSWORD'),
   migrations: ['seeder_migrations/**'],
   entities: [Product, Category],
-  seeds: [MainSeeder],
   seedTracking: true,
 };
 
