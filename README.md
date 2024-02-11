@@ -52,13 +52,13 @@ E o app estará online na porta [:5173](http://localhost:5173/)
 
 Os commits nesse repositório seguem o padrão do [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/) e, para simular o desenvolvimento de uma aplicação de maior escala, cada feature foi criada em uma branch separada passando por um Pull Request e um Code Review para depois realizar o Merge.
 As branchs não foram excluídas e os Pull Requests podem ser consultados [aqui](https://github.com/lucasthalless/menu-app/pulls?q=is%3Apr+is%3Aclosed).
-Ainda assim, houveram commits simples que foram feitos diretamente na branch principal já que o projeto foi desenvolvido individualmente.
+Ainda assim, houveram commits simples e fixes que foram feitos diretamente na branch principal já que o projeto foi desenvolvido individualmente.
 
 ### Backend
 
-O backend foi desenvolvido em *NestJS* com *Typescript*, utilizando o *TypeORM* para criação do banco de dados *MySQL* e sua comunicação com a API.
-Para configuração do banco, além do TypeORM, foi utilizado o *Docker*.
-A arquitetura da API foi baseada na opinião do próprio *NestJS*. Foi utilizada sua CLI para criação das entidades, DTOs, controllers, modules, services e providers.
+O backend foi desenvolvido em **NestJS** com **Typescript**, utilizando o **TypeORM** para criação do banco de dados **MySQL** e sua comunicação com a API.
+Para configuração do banco, além do TypeORM, foi utilizado o **Docker**.
+A arquitetura da API foi baseada na opinião do próprio **NestJS**. Foi utilizada sua CLI para criação das entidades, DTOs, controllers, modules, services e providers.
 
 A autenticação foi implementada contendo dois usuários:
 
@@ -76,16 +76,16 @@ Os usuários não estão em um banco de dados e a autenticação foi implementad
 
 ### Frontend
 
-O frontend foi desenvolvido em *ReactJS* com *Typescript* e estilizado com *Sass*.
-Para criação do projeto de maneira otimizada, foi utilizado o *Vite* (visite essa [documentação](https://pt.vitejs.dev/guide/why.html) que explica porque usar Vite).
+O frontend foi desenvolvido em **ReactJS** com **Typescript** e estilizado com **Sass**.
+Para criação do projeto de maneira otimizada, foi utilizado o **Vite** (visite essa [documentação](https://pt.vitejs.dev/guide/why.html) que explica porque usar Vite).
 
 A biblioteca [Phosphor React](https://www.npmjs.com/package/phosphor-react) foi utilizada para inserção de ícones na aplicação.
 
 Para integração do Frontend com o Backend foram utilizadas as bibliotecas [Axios](https://axios-http.com/) e [React Query](https://www.npmjs.com/package/react-query), que permitem escrever um código menor, mais fácil de entender e te dão um melhor controle sobre as requisições com opções como refetch, captura de erros, informação se a requisição ainda está carregando, entre outras.
 
-A autenticação implementada no frontend funciona se comunicando com a api e, em caso de sucesso no login, guardando o token para utilziar no header das requisições em um cookie. O app verifica se o token existe em todas as outras páginas além da página de autenticação, caso o token não exista, o usuário e redirecionado para realizar o login.
+A autenticação implementada no frontend funciona se comunicando com a api e, em caso de sucesso no login, guardando o token para utilziar no header das requisições em um cookie. Em caso de autenticação inválida o usúario é informado. O app verifica se o token existe em todas as outras páginas além da página de autenticação, caso o token não exista, o usuário é redirecionado para realizar o login.
 
-Além disso, foi implementada a funcionalidade de trocar para tema escuro e claro junto com a detecção do tema utilizado pelo usuário, acredito não ser uma feature muito util para um sistema de cardápios mas foi uma adição que decidi implementar mesmo assim.
+Além disso, foi implementada a funcionalidade de trocar para tema escuro e claro junto com a detecção do tema utilizado pelo sistema do usuário, acredito não ser uma feature convencional para um sistema de cardápio mas decidi implementar mesmo assim.
 
 Deixei abaixo a lógica do componente [CategoryList](https://github.com/lucasthalless/menu-app/blob/main/frontend/src/components/CategoryList/CategoryList.tsx) explicada.
 <details> 
@@ -155,8 +155,8 @@ Dessa maneira, para a aplicação funcionar corretamente, os dados devem ser ins
 
 categorias só podem ter produtos se não tiverem subcategorias, subcategorias não podem ter subcategorias e subcategorias podem ter produtos sem problemas.
 
-esse formato foi uma escolha pessoal e podia ser feito de outras maneiras também.
+esse formato foi uma escolha pessoal e sua implementação poderia ser feita com outras lógicas também.
 
 </details>
 
-Ainda pretendo implementar o context do React na lógica de autenticação do frontend e escrever alguns testes unitários com Jest e Testing Library.
+Ainda pretendo implementar o Context do React na lógica de autenticação do frontend e escrever alguns testes unitários com Jest e Testing Library.
