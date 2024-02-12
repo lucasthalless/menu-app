@@ -37,6 +37,8 @@ As rotas para teste são:
 /product/:id (GET, PATCH, DELETE)
 ```
 
+Collection da API para o Postman disponível [aqui](https://github.com/lucasthalless/menu-app/blob/main/menu-api.postman_collection.json).
+
 ### Frontend
 
 no diretório */frontend* execute:

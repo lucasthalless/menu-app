@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "c10669dc-7f90-4a17-985b-141cbb6441e3",
+		"name": "menu-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23882754"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/product"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categories\": [\n        {\n            \"id\": \"18b80200-c6d6-4512-952c-6a8b5af8082a\",\n            \"name\":\"Pizzas\"   \n        }\n    ],\n    \"name\": \"Frango com catupiry\",\n    \"qty\": 15,\n    \"price\": 3299,\n    \"photo\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/product"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/product/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/product/049907d3-59b9-4729-ae6e-a6498abe3232"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/product/id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Frango com Catupiry\",\n    \"qty\": 15,\n    \"categories\": [\n            {\n                \"id\": \"b16551b2-14a7-4fec-b3f2-6093f952fd69\",\n                \"parent\": \"210bdd12-d4ad-474f-babd-5a876bbc9465\",\n                \"name\": \"Sobremesas Frias\"\n            },\n            {\n                \"id\": \"18b80200-c6d6-4512-952c-6a8b5af8082a\",\n                \"parent\": null,\n                \"name\": \"Pizzas\"\n            }\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/product/049907d3-59b9-4729-ae6e-a6498abe3232"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/product/id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/product/33045f2e-b3db-49b3-99c1-dbc5248e878d"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Bebidas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/category"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/category"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/category/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/category/18b80200-c6d6-4512-952c-6a8b5af8082a"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "joao",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "changeme",
+							"type": "text"
+						}
+					]
+				},
+				"url": "localhost:3000/auth/login"
+			},
+			"response": []
+		}
+	]
+}
