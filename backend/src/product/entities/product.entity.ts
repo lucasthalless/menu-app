@@ -4,7 +4,7 @@ import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
 @Entity('product')
 export class Product extends AbstractEntity<Product> {
-  @ManyToMany(() => Category)
+  @ManyToMany(() => Category, { onDelete: 'CASCADE' })
   @JoinTable({
     name: 'product_categories',
   })

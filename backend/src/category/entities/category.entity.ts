@@ -13,7 +13,9 @@ export class Category extends AbstractEntity<Category> {
   @Column()
   name: string;
 
-  @ManyToMany(() => Product, (product) => product.categories)
+  @ManyToMany(() => Product, (product) => product.categories, {
+    onDelete: 'CASCADE',
+  })
   @JoinTable({
     name: 'product_categories',
   })

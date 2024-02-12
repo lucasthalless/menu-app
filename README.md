@@ -32,7 +32,7 @@ As rotas para teste são:
 ```
 /auth/login (POST)
 /category (GET, POST)
-/category/:id (GET, PATCH, DELETE)
+/category/:id (GET)
 /product (GET, POST)
 /product/:id (GET, PATCH, DELETE)
 ```
