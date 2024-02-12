@@ -24,7 +24,7 @@ export function Login() {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         document.cookie = `auth_token=${response.data.access_token};expires=${tomorrow}; path=/;`;
-        setTimeout(() => navigate("/products"), 1000);
+        setTimeout(() => navigate("/"), 1000);
       });
     } catch (error) {
       setFormError(true);
