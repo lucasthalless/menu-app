@@ -1,21 +1,13 @@
 import { AbstractEntity } from '../../database/abstract.entity';
 import { Product } from '../../product/entities/product.entity';
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  JoinTable,
-  ManyToMany,
-  OneToOne,
-} from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
-@Entity()
+@Entity('category')
 export class Category extends AbstractEntity<Category> {
-  @JoinColumn()
-  id: string;
-
-  @Column({ nullable: true, default: undefined })
-  @OneToOne(() => Category)
+  @Column({
+    nullable: true,
+    default: undefined,
+  })
   parent?: string;
 
   @Column()

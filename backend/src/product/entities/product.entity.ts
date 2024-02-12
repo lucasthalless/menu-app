@@ -2,7 +2,7 @@ import { Category } from '../../category/entities/category.entity';
 import { AbstractEntity } from '../../database/abstract.entity';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
-@Entity()
+@Entity('product')
 export class Product extends AbstractEntity<Product> {
   @ManyToMany(() => Category)
   @JoinTable({

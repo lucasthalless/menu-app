@@ -3,13 +3,12 @@ import { config } from 'dotenv';
 import { Category } from './src/category/entities/category.entity';
 import { Product } from './src/product/entities/product.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { SeederOptions } from 'typeorm-extension';
 
 config();
 
 const configService = new ConfigService();
 
-const options: DataSourceOptions & SeederOptions = {
+const options: DataSourceOptions = {
   type: 'mysql',
   host: configService.getOrThrow('MYSQL_HOST'),
   port: configService.getOrThrow('MYSQL_PORT'),
@@ -18,7 +17,6 @@ const options: DataSourceOptions & SeederOptions = {
   password: configService.getOrThrow('MYSQL_PASSWORD'),
   migrations: ['seeder_migrations/**'],
   entities: [Product, Category],
-  seedTracking: true,
 };
 
 export default new DataSource(options);
